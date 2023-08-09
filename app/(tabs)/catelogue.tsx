@@ -2,14 +2,14 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-import Home from '../home';
+import Catelogue from '../catelogue';
 
-export default function TabOneScreen() {
+export default function catelogue() {
   return (
     <View style={styles.container}>
-      <Home/>
+      <Catelogue/>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      {/* <EditScreenInfo path="app/(tabs)/index.tsx" /> */}
+      {/* <EditScreenInfo path="app/(tabs)/two.tsx" /> */}
     </View>
   );
 }
