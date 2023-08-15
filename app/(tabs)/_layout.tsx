@@ -23,8 +23,6 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         tabBarStyle: {
           backgroundColor: "white",
-          position: "absolute",
-
           borderColor: "white",
         },
       }}>

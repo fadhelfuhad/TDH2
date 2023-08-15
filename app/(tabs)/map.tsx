@@ -1,15 +1,12 @@
 import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-import Map from '../map';
+import Map from '../screens/map';
 import MapView from 'react-native-maps';
 
 export default function map() {
   return (
     <View style={styles.container}>
     <MapView style={styles.map} />
-  
   </View>
   );
 }
