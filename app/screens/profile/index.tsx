@@ -1,17 +1,16 @@
-
-import { MainStackList } from "@/types"
+import { MainStackList } from '@/types';
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image, ListRenderItem, Pressable, FlatList, Modal } from 'react-native';
-import Screen from "@/components/Screen"
-import { Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 import { favorites } from "@/assets/data/mock"
 import ProductCard from "../home/ProductCard";
 import { IProduct } from "@/assets/data/model"
 import { StackActions, useTheme } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
+import ButtonWithIcon from '@/app/components/ButtonWithIcon';
 
 
-export default function Profile({ navigation }: Props) {
+export default function Profile() {
 
     const [modalVisible, setModalVisible] = useState(false);
     const { colors } = useTheme();
@@ -20,18 +19,18 @@ export default function Profile({ navigation }: Props) {
         return <ProductCard product={item} />
     }
 
-    const navigateTo = (route: string) => {
-        (navigation as any).navigate('UserProfile', { screen: route })
-    }
+    // const navigateTo = (route: string) => {
+    //     (navigation as any).navigate('UserProfile', { screen: route })
+    // }
 
-    const logout = () => {
-        setModalVisible(false);
-        navigation.dispatch(StackActions.popToTop());
-    }
+    // const logout = () => {
+    //     setModalVisible(false);
+    //     navigation.dispatch(StackActions.popToTop());
+    // }
 
     return (
       <ScrollView style={styles.screen}>
-        <Screen style={styles.screen}>
+       
             <Modal
                 animationType="slide"
                 transparent={true}
@@ -46,7 +45,7 @@ export default function Profile({ navigation }: Props) {
                         <View style={styles.buttonRow}>
                             <Pressable
                                 style={[styles.button, styles.secondaryButton]}
-                                onPress={logout}
+                                // onPress={logout}
                             >
                                 <Text style={styles.buttonText}>Confirm Logout</Text>
                             </Pressable>
@@ -77,7 +76,8 @@ export default function Profile({ navigation }: Props) {
                 keyExtractor={(item) => item.id.toString()} />
             <Pressable
                 style={styles.profileItem}
-                onPress={() => { navigateTo('OrderHistory') }}>
+                // onPress={() => { navigateTo('OrderHistory') }}
+                >
                 <View style={styles.headingRow}>
                     <Text style={styles.heading}>Order History</Text>
                     <Entypo name="chevron-right" size={22} color="grey" />
@@ -85,7 +85,8 @@ export default function Profile({ navigation }: Props) {
             </Pressable>
             <Pressable
                 style={styles.profileItem}
-                onPress={() => { navigateTo('Addresses') }}>
+                // onPress={() => { navigateTo('Addresses') }}
+                >
                 <View style={styles.headingRow}>
                     <Text style={styles.heading}>My Addresses</Text>
                     <Entypo name="chevron-right" size={22} color="grey" />
@@ -93,28 +94,33 @@ export default function Profile({ navigation }: Props) {
             </Pressable>
             <Pressable
                 style={styles.profileItem}
-                onPress={() => { navigateTo('PersonalInfo') }}>
+                // onPress={() => { navigateTo('PersonalInfo') }}
+                >
                 <View style={styles.headingRow}>
                     <Text style={styles.heading}>Personal Info</Text>
                     <Entypo name="chevron-right" size={22} color="grey" />
                 </View>
             </Pressable>
-            <Pressable
-                style={styles.profileItem}
-                onPress={() => setModalVisible(true)}>
-                <View style={styles.headingRow}>
-                    <Text style={styles.heading}>Logout</Text>
-                    <Entypo name="chevron-right" size={22} color="grey" />
-                </View>
-            </Pressable>
-        </Screen>
+            <View className="p-2">
+          <ButtonWithIcon
+            icon={
+              <AntDesign name="poweroff" size={18} color={"#F8719D"} />
+            }
+            text="Logout"
+            textColor="text-error-main"
+            color=" border-2 border-red-400"
+            style={{ marginBottom: 50}}
+            // onPress={() => signOut()}
+          />
+        </View>
+     
         </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     screen: {
-        marginTop: 24,
+        marginTop: 20,
         flex: 1,
     },
     imageContainer: {

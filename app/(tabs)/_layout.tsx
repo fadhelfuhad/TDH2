@@ -1,7 +1,6 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
-
+import { Pressable, View, useColorScheme } from 'react-native';
 import Colors from '@/constants/Colors';
 
 /**
@@ -20,10 +19,10 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: "#fed12c",
         tabBarStyle: {
-          backgroundColor: "white",
-          borderColor: "white",
+          backgroundColor: "#62516D",
+          borderColor: "#62516D",
         },
       }}>
       <Tabs.Screen
@@ -51,15 +50,18 @@ export default function TabLayout() {
         name="catelogue"
         options={{
           title: 'Catelogue',
-          tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="list" color={color} />,
         }}
       />
        <Tabs.Screen
         name="map"
         options={{
-          headerShown: false,
-          title: 'Map',
-          tabBarIcon: ({ color }) => <TabBarIcon name="map" color={color} />,
+          title: 'Search',
+          tabBarIcon: ({color}) => (
+            <View className=" absolute bottom-0 p-3.5 rounded-full bg-primary ">
+              <TabBarIcon name="search" color={color} />
+            </View>
+          ),
         }}
       />
        <Tabs.Screen

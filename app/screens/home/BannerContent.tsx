@@ -15,7 +15,7 @@ const BannerContent = () => {
                 <Text style={styles.bannerTitle}>The New Summer Collection</Text>
                 <View style={styles.bannerFooter}>
                     <Text style={styles.bannerSubtitle}>The New Summer Collection</Text>
-                    <Pressable style={[styles.button, { backgroundColor: colors.primary }]}>
+                    <Pressable style={[styles.button, { backgroundColor: "#fed12c" }]}>
                         <Text>See more</Text>
                     </Pressable>
                 </View>

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthenticateResponse } from "../../services/model/authResponse";
+import { AuthenticateResponse } from "@/services/model/authResponse";
 import { UserState } from "../actions";
 
 

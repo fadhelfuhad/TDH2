@@ -1,10 +1,18 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import Profile from '../screens/profile';
+import { Stack } from 'expo-router';
 
 export default function profile() {
   return (
     <View style={styles.container}>
+          <Stack.Screen
+      options={{
+        headerStyle: { backgroundColor: "#62516D" },
+        headerTitleAlign: "center",
+        headerTitleStyle: {color:"white"}
+      }}
+    />
       <Profile/>
     </View>
   );

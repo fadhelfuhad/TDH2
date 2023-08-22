@@ -1,15 +1,15 @@
 
-import { MainStackList } from "../../../types";
+import { MainStackList } from "@/types";
 import React from 'react'
 import { View, StyleSheet, TextInput, FlatList, ListRenderItem } from 'react-native';
 import { AntDesign } from "@expo/vector-icons";
-import AppStyles from "../../../styles";
-import { catelogueList } from "../../../assets/data/mock";
+import AppStyles from "@/styles";
+import { catelogueList } from "@/assets/data/mock";
 import CatelogueItem from "./CatelogueItem";
 import SelectableButton from "@/components/SelectableButtone"
 import { useAppSelector } from "../../hooks"
 import { selectGenderFilters } from "../../redux/selectors"
-import { ICatelogueGroup, ICatelogueItem } from "../../../assets/data/model";
+import { ICatelogueGroup, ICatelogueItem } from "@/assets/data/model";
 
 
 

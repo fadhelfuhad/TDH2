@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, View, Text, FlatList, ListRenderItem } from 'react-native'
-import { IProduct, IProductList } from '../../../assets/data/model'
+import { IProduct, IProductList } from '@/assets/data/model'
 import ProductCard from './ProductCard'
 
 

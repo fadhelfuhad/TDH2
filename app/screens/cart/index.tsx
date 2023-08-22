@@ -1,13 +1,14 @@
 
-import { MainStackList } from "../../../types";
+import { MainStackList } from "@/types";
 import React from 'react'
 import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import { useAppSelector } from "../../hooks"
 import { selectCartItems } from "../../redux/selectors"
-import AppStyles from "../../../styles";
+import AppStyles from "@/styles";
 import { useTheme } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import CartProductItem from "./cartProduct";
+import { ScrollView } from "react-native-gesture-handler";
 
 
 export default function Cart() {
@@ -31,7 +32,7 @@ export default function Cart() {
     }
 
     return (
-        <Screen scroll={true} style={styles.cartWrapper}>
+        <ScrollView style={styles.cartWrapper}>
             <Text style={styles.cartItemsCount}>{cartProducts.length} Items in cart</Text>
             {
                 cartProducts.map((product) => <CartProductItem product={product} key={product.id} />)
@@ -46,7 +47,7 @@ export default function Cart() {
                 style={[AppStyles.button, AppStyles.topspace, { backgroundColor: colors.primary }]}>
                 <Text style={styles.secondaryButtonText}>Checkout</Text>
             </Pressable>
-        </Screen>
+        </ScrollView>
     )
 }
 

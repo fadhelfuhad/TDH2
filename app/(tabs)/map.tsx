@@ -1,32 +1,80 @@
-import { StyleSheet } from 'react-native';
-import { Text, View } from '@/components/Themed';
-import Map from '../screens/map';
-import MapView from 'react-native-maps';
+import { Stack } from "expo-router";
+import Map from "../screens/map";
+import React, { useCallback, useMemo, useRef } from "react";
+import { Button, StyleSheet, View } from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import {
+  BottomSheetModal,
+  BottomSheetModalProvider,
+} from '@gorhom/bottom-sheet';
 
-export default function map() {
+function map() {
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+
+  // variables
+  const snapPoints = useMemo(() => ['25%', '50%'], []);
+
+  // callbacks
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
   return (
     <View style={styles.container}>
-    <MapView style={styles.map} />
-  </View>
+       <Stack.Screen
+      options={{
+        headerStyle: { backgroundColor: "#62516D" },
+        headerTitleAlign: "center",
+        headerTitleStyle: {color:"white"}
+      }}
+    />
+      <Map />
+      
+      <GooglePlacesAutocomplete
+        placeholder="Search"
+        onPress={(data, details = null) => {
+          // 'details' is provided when fetchDetails = true
+          console.log(data, details);
+        }}
+        
+        query={{
+          key: "AIzaSyBSxMmDVlldnooFEue930cMR2WJLFZ26Xk",
+          language: "en",
+          // components: "country:us",
+        }}
+      />
+         {/* <BottomSheetModalProvider>
+      <View style={styles.container}>
+        <Button
+          onPress={handlePresentModalPress}
+          title="Present Modal"
+          color="black"
+        />
+        <BottomSheetModal
+          ref={bottomSheetModalRef}
+          index={1}
+          snapPoints={snapPoints}
+          onChange={handleSheetChanges}
+        >
+       
+        </BottomSheetModal>
+      </View>
+    </BottomSheetModalProvider> */}
+    </View>
   );
 }
-
+export default map;
 const styles = StyleSheet.create({
- 
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
   container: {
     flex: 1,
+    width: "100%",
+    height: "50%",
   },
-  map: {
-    width: '100%',
-    height: '100%',
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
   },
 });

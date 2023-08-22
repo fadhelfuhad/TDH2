@@ -1,12 +1,34 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { useState } from "react";
+import { StyleSheet, View } from "react-native";
+import MapView, { Callout, Marker } from "react-native-maps";
+import { Text } from "@/components/Themed";
 
-const Map = () => {
+
+function map() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, react-hooks/rules-of-hooks
+  const [mapRegion, setMapRegion] = useState({
+    latitude: 26.0667,
+    longitude: 50.5577,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  });
   return (
-    <View>
-      <Text>Map</Text>
+    <View style={styles.container}>
+      <MapView
+        style={{ alignSelf: "stretch", height: "100%" }}
+        region={mapRegion}
+      ><Marker
+      coordinate={{latitude: 26.0667, longitude: 50.5577}}
+      style={{borderColor:"pink"}}
+    >
+    <Callout><Text>Im here</Text></Callout></Marker>
+      </MapView>
     </View>
-  )
+  );
 }
-
-export default Map
+export default map;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

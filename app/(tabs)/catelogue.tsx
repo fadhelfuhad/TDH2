@@ -1,10 +1,18 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import Catelogue from "../screens/catelogue";
+import { Stack } from 'expo-router';
 
 export default function catelogue() {
   return (
     <View style={styles.container}>
+          <Stack.Screen
+      options={{
+        headerStyle: { backgroundColor: "#62516D" },
+        headerTitleAlign: "center",
+        headerTitleStyle: {color:"white"}
+      }}
+    />
       <Catelogue/>
     </View>
   );

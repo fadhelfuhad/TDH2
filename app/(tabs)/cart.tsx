@@ -1,10 +1,18 @@
 import { StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import Cart from '../screens/cart';
+import { Stack } from 'expo-router';
 
 export default function cart() {
   return (
     <View style={styles.container}>
+          <Stack.Screen
+      options={{
+        headerStyle: { backgroundColor: "#62516D" },
+        headerTitleAlign: "center",
+        headerTitleStyle: {color:"white"}
+      }}
+    />
       <Cart/>
     </View>
   );

@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
-import { ICatelogueItem } from "../../../assets/data/model";
+import { ICatelogueItem } from "@/assets/data/model";
 
 interface Props {
     catelogue: ICatelogueItem,
