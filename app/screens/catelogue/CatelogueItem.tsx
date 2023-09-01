@@ -14,11 +14,11 @@ const CatelogueItem = ({ catelogue }: Props) => {
     return (
         <Pressable
             style={[styles.button]}
-            // onPress={() => (navigation as any).navigate('Shopping', {
-            //     screen: 'Catalogue', params: {
-            //         name: catelogue.name, id: catelogue.id
-            //     }
-            // })}
+            onPress={() => (navigation as any).navigate('Shopping', {
+                screen: 'Catalogue', params: {
+                    name: catelogue.name, id: catelogue.id
+                }
+            })}
             >
             <View style={styles.row}>
                 <View style={styles.imageBackground}>

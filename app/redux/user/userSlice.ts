@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AuthenticateResponse } from "@/services/model/authResponse";
+// import { AuthenticateResponse } from "@/services/model/authResponse";
 import { UserState } from "../actions";
 
 
@@ -12,7 +12,9 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        updateUser: (state, action: PayloadAction<AuthenticateResponse>) => {
+        updateUser: (state, action
+            // : PayloadAction<AuthenticateResponse>
+            ) => {
             state = {
                 jwt: action.payload.jwt,
                 user: action.payload.user

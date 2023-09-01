@@ -18,9 +18,23 @@ function map() {
         style={{ alignSelf: "stretch", height: "100%" }}
         region={mapRegion}
       ><Marker
-      coordinate={{latitude: 26.0667, longitude: 50.5577}}
-      style={{borderColor:"pink"}}
+      coordinate={{latitude: 26.0567, longitude: 50.5577}}
+      style={{borderColor:"white"}}
     >
+      <Marker
+      coordinate={{latitude: 26.0667, longitude: 50.5577}}
+      style={{borderColor:"white"}}
+    >
+      <Marker
+      coordinate={{latitude: 26.0667, longitude: 50.5577}}
+      style={{borderColor:"white"}}
+    >
+      <Marker
+      coordinate={{latitude: 26.0667, longitude: 50.5577}}
+      style={{borderColor:"white"}}
+    ></Marker>
+    </Marker>
+    </Marker>
     <Callout><Text>Im here</Text></Callout></Marker>
       </MapView>
     </View>

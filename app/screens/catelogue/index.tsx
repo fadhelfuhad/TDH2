@@ -56,11 +56,11 @@ export default function Catelogue() {
 
 const styles = StyleSheet.create({
     screen: {
-        paddingTop: 56,
+        paddingTop: 35,
         paddingHorizontal: 16,
         flex: 1,
     },
     buttonList: {
-        marginTop: 24,
+        marginTop: 18,
     }
 })
