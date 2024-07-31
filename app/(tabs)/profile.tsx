@@ -1,19 +1,19 @@
-import { StyleSheet } from 'react-native';
-import { Text, View } from '@/components/Themed';
-import Profile from '../screens/profile';
-import { Stack } from 'expo-router';
+import { StyleSheet } from "react-native";
+import { Text, View } from "@/components/Themed";
+import Profile from "../screens/profile";
+import { Stack } from "expo-router";
 
 export default function profile() {
   return (
     <View style={styles.container}>
-          <Stack.Screen
-      options={{
-        headerStyle: { backgroundColor: "#62516D" },
-        headerTitleAlign: "center",
-        headerTitleStyle: {color:"white"}
-      }}
-    />
-      <Profile/>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: "#003867" },
+          headerTitleAlign: "center",
+          headerTitleStyle: { color: "white" },
+        }}
+      />
+      <Profile />
     </View>
   );
 }
@@ -21,16 +21,16 @@ export default function profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
   },
 });

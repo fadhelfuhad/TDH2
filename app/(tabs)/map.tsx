@@ -5,36 +5,35 @@ import { Button, StyleSheet, View, Text } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import BottomSheet, {
   BottomSheetModal,
-BottomSheetTextInput
-} from '@gorhom/bottom-sheet';
+  BottomSheetTextInput,
+} from "@gorhom/bottom-sheet";
 import MapCatelogue from "@/components/MapCatelogue";
-
 
 function map() {
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['25%', '100%'], []);
+  const snapPoints = useMemo(() => ["25%", "100%"], []);
 
   // callbacks
   const handlePresentModalPress = useCallback(() => {
     bottomSheetModalRef.current?.present();
   }, []);
   const handleSheetChanges = useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
+    console.log("handleSheetChanges", index);
   }, []);
 
   return (
     <View style={styles.container}>
-       <Stack.Screen
-      options={{
-        headerStyle: { backgroundColor: "#62516D" },
-        headerTitleAlign: "center",
-        headerTitleStyle: {color:"white"}
-      }}
-    />
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: "#003867" },
+          headerTitleAlign: "center",
+          headerTitleStyle: { color: "white" },
+        }}
+      />
       <Map />
-      
+
       {/* <GooglePlacesAutocomplete
         placeholder="Search"
         onPress={(data, details = null) => {
@@ -48,11 +47,11 @@ function map() {
           // components: "country:us",
         }}
       /> */}
-       <BottomSheet snapPoints={snapPoints}>
+      <BottomSheet snapPoints={snapPoints}>
         <View style={styles.contentContainer}>
           {/* <BottomSheetTextInput value="Search nearby..." style={styles.textInput} /> */}
-      <MapCatelogue/>
-      </View>  
+          <MapCatelogue />
+        </View>
       </BottomSheet>
     </View>
   );
@@ -81,6 +80,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
 });

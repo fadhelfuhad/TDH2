@@ -16,7 +16,7 @@ const colors = {
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
   },
-  primary: "#62516D",
+  primary: "#003867",
   secondary: {
     main: "#09273D",
     "50": "#f8fafc",
